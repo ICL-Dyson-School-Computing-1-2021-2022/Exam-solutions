@@ -71,8 +71,7 @@ class Trolley:
         if product_name in self.contents:
             self.contents[product_name]["cost"] = price
         else:
-            self.contents[product_name]["cost"] = price
-            self.contents[product_name]["quantity"] = 0
+            self.contents[product_name] = {"cost": price, "quantity": 0}
 # Create a method called calculate_cost(). It should:
 #   - return the total value of the trolley (cost x quantity)
 

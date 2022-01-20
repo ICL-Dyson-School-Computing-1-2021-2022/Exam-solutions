@@ -36,9 +36,12 @@ class Trolley:
 
     def add_product(self, product_name, product_cost, quantity = 1):
         # create a new entry in the dictionary and add the product
-        self.contents[product_name]={}
-        self.contents[product_name]["cost"] = product_cost
-        self.contents[product_name]["quantity"] = quantity
+        if product_name in self.contents:
+            self.contents[product_name]["quantity"] += product_cost
+        else:
+            self.contents[product_name]={}
+            self.contents[product_name]["cost"] = product_cost
+            self.contents[product_name]["quantity"] = quantity
 
 
 # Create a method called remove_product(). It should:
